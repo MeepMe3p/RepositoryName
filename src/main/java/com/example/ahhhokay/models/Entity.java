@@ -12,15 +12,15 @@ public class Entity {
     double height;
 
     Image entityImage;
-
+//constructor for creating an entity needs and image but i think BufferedImage or something if wid animations or file
     public Entity(Image entityImage) {
         this.entityImage = entityImage;
         this.width = entityImage.getWidth();
         this.height = entityImage.getHeight();
     }
 
-//     *                                                  POSITIONAL                                                *
-
+//     --------------------------POSITIONAL---------------------------
+//    FOR CHANGING POSITIONS USING POINT2D CUZ WHY NOT, CAN BE REFACTORED TO BE X Y
     public Point2D getDrawPosition() {
         return position;
     }
@@ -41,12 +41,11 @@ public class Entity {
 
 
 
-//     *                                                    IMAGE                                                   *
-
+//     --------------------------IMAGE---------------------------
+//   FOR IMAGE DETAILS PURPOSES
     public Image getImage() {
         return entityImage;
     }
-
     public double getWidth() {
         return this.width * getScale();
     }
@@ -55,12 +54,13 @@ public class Entity {
         return this.height * getScale();
     }
 
-//                                                      MOVEMENT                                                 *
+//     --------------------------MOVEMENT---------------------------
 
-    private float MAX_SPEED = 5f;
+//    private float MAX_SPEED = 5f;
+
     private Point2D currentLocation = new Point2D(0, 0);
 
-
+//   CHARACTER MOVES EVERYTIME UPDATE IS CALLED IN GAMECONTROLLER
     public void update() {
         move(currentLocation);
     }

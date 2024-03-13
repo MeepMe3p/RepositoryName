@@ -27,7 +27,7 @@ public class GameController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+//      INITIALIZES THE CANVAS FOR DRAWING THE ENTITIES
         initialiseCanvas();
         System.out.println("aaaaaaa initialized");
         player.setDrawPosition(350, 200);
@@ -35,13 +35,8 @@ public class GameController implements Initializable {
 
         Renderer renderer = new Renderer(this.gameCanvas);
         renderer.addEntity(player);
-        try{
-//            renderer.setBackground(new Image(getClass().getResourceAsStream("/img/windrise-background-4k.png")));
 
-        }catch (NullPointerException e){
-            System.out.println("a");
-        }
-
+//      ANIMATION TIMER
         GameLoopTimer timer = new GameLoopTimer() {
             @Override
             public void tick(float secondsSinceLastFrame) {
@@ -54,7 +49,7 @@ public class GameController implements Initializable {
         };
         timer.start();
     }
-
+//  BINDS SO THAT WHEN YOU ADJUST THE ANCHOR PANE THE GAME CANVAS IS THE SAME SIZE
     private void initialiseCanvas() {
         gameCanvas.widthProperty().bind(gameAnchor.widthProperty());
         gameCanvas.heightProperty().bind(gameAnchor.heightProperty());
@@ -62,7 +57,7 @@ public class GameController implements Initializable {
 
 
     }
-
+//  FOR PLAYER MOVEMENT CAN BECOME MORE EFFICIENT PA I THINK IMMA DO IT LATER
     private void updatePlayerMovement(float frameDuration) {
         if (keys.isDown(KeyCode.D)) {
             Point2D vector = new Point2D(5,0);

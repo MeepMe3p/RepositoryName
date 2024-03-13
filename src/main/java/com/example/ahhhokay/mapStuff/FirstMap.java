@@ -101,11 +101,7 @@ public class FirstMap implements MapHandler{
                     }
                 }
             }
-//            double scaleX = sceneWidth / (numCols * tileSize);
-//            double scaleY = sceneHeight / (numRows * tileSize);
-//            System.out.println("x: "+scaleX+" y : "+ scaleY);
-//            root.setScaleX(scaleX);
-//            root.setScaleY(scaleY);
+
             return root;
         } catch (ParserConfigurationException e) {
 //            throw new RuntimeException(e);
@@ -115,8 +111,7 @@ public class FirstMap implements MapHandler{
         }catch (IOException e){
             System.out.println("uwu");
         }
-//        System.out.println("didnt wokr");
-////        Group root = new Group();
+
         return null;
     }
 }

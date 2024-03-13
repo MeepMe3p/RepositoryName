@@ -8,7 +8,7 @@ import javafx.beans.property.SimpleDoubleProperty;
 
 public abstract class GameLoopTimer extends AnimationTimer {
 
-    long pauseStart;
+
     long animationStart;
     DoubleProperty animationDuration = new SimpleDoubleProperty(0L);
 
@@ -20,7 +20,7 @@ public abstract class GameLoopTimer extends AnimationTimer {
     @Override
     public void handle(long now) {
 
-
+//      WHILE TRUE 1e9 just means 100000000 nanosecs or 1 second
         if (!isPaused) {
             long animDuration = now - animationStart;
             animationDuration.set(animDuration / 1e9);

@@ -36,6 +36,8 @@ public class Renderer {
 
     public void render() {
 //        context.save();
+
+        //CLEARS EVERYTME IT RENDERS TO MAKE TRAILING DISAPPEAR
         context.clearRect(0,0,canvas.getWidth(),canvas.getHeight());
 //        if(background!=null){
 //            context.drawImage(background, 0, 0);
@@ -52,15 +54,12 @@ public class Renderer {
                     entity.getHeight()
             );
         }
-        System.out.println("aaaaaaaaaaaaaaaaaaaaa");
+//        System.out.println("aaaaaaaaaaaaaaaaaaaaa");
 
 //        context.restore();
     }
 
-    public void prepare(){
-//        context.setFill( new Color(0.68, 0.68, 0.68, 1.0) );
-//        context.fillRect(0,0, canvas.getWidth(),canvas.getHeight());
-    }
+
 
 
 
