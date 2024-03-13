@@ -19,9 +19,7 @@ public class Entity {
         this.height = entityImage.getHeight();
     }
 
-    /* ************************************************************************************************************
-     *                                                  POSITIONAL                                                *
-     ************************************************************************************************************ */
+//     *                                                  POSITIONAL                                                *
 
     public Point2D getDrawPosition() {
         return position;
@@ -43,9 +41,7 @@ public class Entity {
 
 
 
-    /* ************************************************************************************************************
-     *                                                    IMAGE                                                   *
-     ************************************************************************************************************ */
+//     *                                                    IMAGE                                                   *
 
     public Image getImage() {
         return entityImage;
@@ -59,16 +55,14 @@ public class Entity {
         return this.height * getScale();
     }
 
-    /* ************************************************************************************************************
-     *                                                   MOVEMENT                                                 *
-     ************************************************************************************************************ */
+//                                                      MOVEMENT                                                 *
 
     private float MAX_SPEED = 5f;
-    private Point2D currentThrustVector = new Point2D(0, 0);
+    private Point2D currentLocation = new Point2D(0, 0);
 
 
     public void update() {
-        move(currentThrustVector);
+        move(currentLocation);
     }
 
     public void setScale(float scale) {
